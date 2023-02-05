@@ -9,6 +9,8 @@ The fastest token generator bypassing discords latest patches. This is one of th
 - Random online/ide/dnd mobile/pc and games
 - Capmonster captcha solver
 
+⭐ 50 stars for src release!
+
 Preview: https://youtu.be/YA8zjkTKDbs
 Discord: https://discord.gg/MYUgG6rqCg
 
