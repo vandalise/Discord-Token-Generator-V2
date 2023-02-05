@@ -11,7 +11,7 @@ The fastest token generator bypassing discords latest patches. This is one of th
 
 ⭐ 50 stars for src release!
 
-Preview: https://youtu.be/YA8zjkTKDbs
-Discord: https://discord.gg/MYUgG6rqCg
+- Preview: https://youtu.be/YA8zjkTKDbs
+- Discord: https://discord.gg/MYUgG6rqCg
 
 ⭐ Please, if you enjoy our product consider leaving a feedback to support us. ⭐
