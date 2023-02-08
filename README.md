@@ -10,7 +10,7 @@ The fastest token generator bypassing discords latest patches. This is one of th
 - Capmonster captcha solver
 
 ## Why did I release this?
-I spent alot of time making this tool and i sent it to a friend so we could sell it together, after a few days he stole my src and banned me from my own server, now hes continuing to sell this tool and acting like he made it. So im hoping it gets patched.
+I spent alot of time making this tool and i sent it to a friend so we could sell it together, after a few days he stole my src and banned me from the server, now hes continuing to sell this tool and acting like he made it. So im hoping it gets patched.
 
 ## Skids
 chrxst#4626
