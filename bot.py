@@ -177,32 +177,6 @@ def solve_cap():
                 break
         return data["solution"]["gRecaptchaResponse"]
 
-def CheckUnformatted(auth):
-    try:
-        halfauth = auth[:len(auth)//2]
-        x = httpx.get('https://discord.com/api/v9/users/@me', headers={'Authorization': auth})
-        if x.status_code == 200:
-            y = httpx.get('https://discord.com/api/v9/users/@me/affinities/users', headers={'Authorization': auth})
-            json = x.json()
-            if y.status_code == 200:
-                print(Fore.GREEN + f'VALID: {halfauth}***** {json["username"]}#{json["discriminator"]}')
-                open("valid.txt", "a").write(auth+"\n")
-                open("unformat.txt", "a").write(auth+"\n")
-            elif y.status_code == 403:
-                print(Fore.YELLOW + f'LOCKED: {halfauth}***** {json["username"]}#{json["discriminator"]}')
-            elif y.status_code == 429:
-                print(Fore.YELLOW + f"You're being rate limited")
-                time.sleep(y.headers['retry-after'])
-            elif x.status_code == 429:
-                print(Fore.YELLOW + f"You're being rate limited")
-                time.sleep(y.headers['retry-after'])
-            else:
-                print(Fore.RED + f'INVALID: {halfauth}')
-    except Exception as e:
-        print(e)
-        pass
-
-
 def xprop():
     xpropheader = str("""{"os":"Windows","browser":"Chrome","device":"","system_locale":"en-US","browser_user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36","browser_version":"105.0.0.0","os_version":"10","referrer":"","referring_domain":"","referrer_current":"","referring_domain_current":"","release_channel":"stable","client_build_number":151638,"client_event_source":null}""")
     xprops = base64.b64encode(xpropheader.encode('utf-8')).decode('utf-8')
@@ -253,17 +227,6 @@ def cookie():
             ]
         )
     return dict(Client.get("https://discord.com/register", proxy=proxies).cookies)
-
-def join_vc(token, guildid, channelid):
-    while True:
-        try:
-            ws = websocket.WebSocket()
-            ws.connect("wss://gateway.discord.gg/?v=9&encoding=json")
-            ws.send(json.dumps({"op": 2,"d": {"token": token, "properties": {"$os": "windows","$browser": "Discord","$device": "desktop"}}}))
-            ws.send(json.dumps({"op": 4,"d": {"guild_id": guildid,"channel_id": channelid, "self_mute": True,"self_deaf": True}}))
-            ws.close()
-        except:
-            continue
 
 def gen(username, invite):
     while True:
